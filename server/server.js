@@ -1,4 +1,5 @@
 var app = require('./app').default;
-app.listen(8090);
+app.listen(app.get('port'), () => {
+  console.log('app started on port', app.get('port'));
+});
 
-console.log('app started on port 8090')
