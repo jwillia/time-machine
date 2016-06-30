@@ -4,9 +4,8 @@ import sponsors from './resources/sponsors'
 const app = express();
 
 app.set('port', (process.env.PORT || 5000));
-app.use('/api/v1/sponsor-groups', sponsorGroups);
-app.use('/api/v1/sponsors', sponsors);
 app.use('/', express.static('build'));
+app.use('/static', express.static('static'))
 app.get('/', (req,res) => {
   res.sendFile(__dirname + '/index.html');
 });
